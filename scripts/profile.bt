@@ -1,0 +1,11 @@
+
+usdt:$1:default:machine_pc_location 
+{ 
+    @machine_pc = arg0;
+}
+
+profile:hz:199 {
+    if (@machine_pc > 0) {
+        @[*((uint64*)@machine_pc)] = count();
+    }
+}

@@ -1,0 +1,15 @@
+
+usdt:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:default:trace_instruction_count 
+{ 
+    @trace_instruction_count = lhist(arg0, 0, 32, 1);
+}
+
+usdt:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:default:slow_path
+{
+    @slow_path = count();
+}
+
+usdt:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:default:slow_path_trace
+{
+    @slow_path_trace = count();
+}
