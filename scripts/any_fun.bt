@@ -1,0 +1,16 @@
+
+
+
+uprobe:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:"_ZN6ckb_vm7decoder7Decoder6decode17h4e89ca20db9875ebE"
+{
+    @begin = nsecs;
+}
+
+uretprobe:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:"_ZN6ckb_vm7decoder7Decoder6decode17h4e89ca20db9875ebE"
+{
+    @stats = stats(nsecs - @begin);
+}
+
+END {
+    clear(@begin);
+}

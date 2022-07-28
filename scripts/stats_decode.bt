@@ -1,0 +1,16 @@
+
+
+
+usdt:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:default:decode_begin
+{
+    @begin = nsecs;
+}
+
+usdt:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:default:decode_end
+{
+    @stats = stats(nsecs - @begin);
+}
+
+END {
+    clear(@begin);
+}
