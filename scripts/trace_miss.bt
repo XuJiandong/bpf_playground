@@ -1,0 +1,22 @@
+
+
+
+// update address by 
+// objdump -tT ~/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner | fgrep prepare_trace
+uprobe:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:0x18e60
+{
+    @refs += 1;
+}
+
+// update address by
+// from: objdump -tT ~/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner | fgrep exit_trace
+uprobe:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:0x1c390
+{
+    @misses += 1;
+}
+
+END {
+    if (@refs > 0) {
+        printf("trace miss = %d", @misses/@refs*100);
+    }
+}

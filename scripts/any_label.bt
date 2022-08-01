@@ -1,0 +1,7 @@
+
+uprobe:/home/xjd/projects/ckb-vm-rvv/target/release/examples/ckb-vm-runner:0x19714
+{
+    @[reg("bp")] = count();
+}
+
+
