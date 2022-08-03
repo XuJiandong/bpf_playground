@@ -1,8 +1,7 @@
 
-
-# this very simple probe costs:
-# (0.380489000 - 0.005388276)/(1000*1000) = 380 ns
-# equals to 4 DDR memory references
+// this very simple probe costs:
+// (1.73 - 0.005)/(1000*1000) = 1725 ns
+// equals to 17 DDR memory references
 uprobe:/home/xjd/projects/bpf_playground/c/loop:do_cal
 {
     @count += 1;
